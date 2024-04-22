@@ -1,0 +1,22 @@
+header {
+    padding: 1.8rem $gutter;
+    h1 {font-size: 2rem;}
+}
+
+#hamburger, #closex {display: none;}
+nav{
+    height: auto;
+    ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    ul li a {
+        padding: .9rem 5vw;
+    }
+}
+
+/* STRUCTURE STUFF GOES HERE  */
+#headerWrapper {grid-row-start: 1}
+#navWrapper {grid-row-start: 2}
+#mainWrapper {grid-row-start: 3}
+#footerWrapper {grid-row-start: 4}

@@ -1,0 +1,168 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+}
+  
+/*---- apply a natural box layout model to all elements -------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100%;
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    color: $fontColor;
+    background-color: $backgroundColor;
+    h1 {
+        font-family: $headingFont;
+        color: $primaryColor;
+    }
+}
+
+
+// HEADER
+#headerWrapper {
+    background-color: #d9d8cc;
+    color: $secondaryColor;
+    grid-row-start: 1;
+}
+header {
+    display: grid;
+    grid-template-columns: 35px auto 44px;
+    align-items: center;
+    padding: .5rem 2vw;
+    gap: 10px;
+    h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: $boldWeight;
+    }
+} // end header
+
+
+// NAV
+#navWrapper {
+    background-color: $primaryColor;
+    grid-row-start: 4;
+}
+
+#hamburger a, #closex a{
+    display: block;
+    padding: .8rem 2vw;
+    font-size: 1.5rem;
+    color: $primaryColor;
+    text-align: right;
+    text-decoration: none;
+} // end nav button
+
+#closex a{
+    margin-right: 2vw;
+    color: $backgroundColor;
+}
+
+nav {
+    height: 100vh;
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 2vw;
+    }
+
+    ul li a {
+        display: block;
+        padding: 0.9rem 2vw;
+        color: $backgroundColor;
+        font-weight:300;
+        text-align: right;
+        text-decoration: none;
+    } // end anchors
+     ul li.active a {background-color: lighten($primaryColor, 5%);}
+     ul li a:hover {background-color: lighten($primaryColor, 8%);}
+
+}// end nav
+
+
+
+//MAIN
+#mainWrapper {
+    margin: 0 $gutter;
+    grid-row-start: 2;
+}
+
+form.myForm {
+    margin: 1rem $gutter;
+
+
+    h3 {
+        font-size: 1rem;
+        color: $primaryColor;
+        margin: 1.5rem 0 .5rem 0;
+        border-bottom: 1px solid lighten($secondaryColor, 40%);
+    }    
+    label{
+        display: block;
+        font-size: .9rem;
+        color: $primaryColor;
+        padding-top: .2rem;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    input[type=password],
+    input[type=date],
+    select {
+        display: block;
+        padding: .5rem 8px;
+        margin: .2rem 0 1rem 0;
+        border: .5px solid lighten($secondaryColor, 30%); 
+        border-radius: 5px;
+        border-left-width: 4px;
+        font-size: 1rem;
+        color: $primaryColor;
+        width: 300px; 
+    }
+
+    input:required {border-left-color: #e98181;}
+    input:required:valid{border-left-color: $secondaryColor;}
+    
+    input[type=submit] {
+        border: none;
+        background-color: $primaryColor;
+        color: $backgroundColor;
+        border-radius: 10px;
+        padding: .75rem 1.5rem;
+        margin: 2rem 0;
+        width: 150px;
+        font-size: 1rem;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+
+} // end of form
+
+
+
+
+
+// begin footer
+#footerWrapper {
+    background-color: #99a496;
+    padding: .8rem $gutter;
+    grid-row-start: 3;
+    p {
+        margin: 0;
+        font-weight: $lightWeight;
+        color: #333;
+        text-align: center;
+    }
+}
